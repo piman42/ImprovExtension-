@@ -1,0 +1,39 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html ng-app = "myApp">
+  <head>
+
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        width: 30em;
+        height: 5em;
+        }
+    </style>
+
+  </head>
+  <body>
+  <div ng-controller="improvWriter">
+
+  <p ng-repeat="sentance in sentances">
+    <span>{{sentance.text}}</span>
+  </p>
+
+  <form>
+  <input type="text" ng-model="formSentance" ng-model-instant>
+{{formSentance}}
+  <button class="btn" ng-click="addSentance()">Publish</button>
+</form>
+{{sentance.text}}
+
+</div>
+  </body>
+  <script src = "angular.min.js"></script>
+  <script type="text/javascript" src="popup.js"></script>
+</html>
